@@ -69,11 +69,17 @@ header {
         }
     }
 }
+
 .future-temp {
+    -webkit-column-count:1;
+    -moz-column-count:1;
+    column-count:1;
+
     .card {
-        width: 175px;
+        width: 200px;
         color: white;
         background-color: var(--cta);
+        flex-wrap: wrap;
 
         &:hover {
             background-color: var(--cta-hover);

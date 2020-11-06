@@ -81,16 +81,23 @@ header {
 }
 
 /* line 73, scss/index.scss */
-.future-temp .card {
-  width: 175px;
-  color: white;
-  background-color: var(--cta);
+.future-temp {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
 }
 /* line 78, scss/index.scss */
+.future-temp .card {
+  width: 200px;
+  color: white;
+  background-color: var(--cta);
+  flex-wrap: wrap;
+}
+/* line 84, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 85, scss/index.scss */
+/* line 91, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }
