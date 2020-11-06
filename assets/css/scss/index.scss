@@ -31,6 +31,10 @@ body::before {
         border: 1px solid var(--cta-hover-border);
     }
 }
+h3 {
+    font-size: 1.25rem;
+}
+
 /** Components **/
 header {
     width: 100%;
@@ -53,6 +57,25 @@ header {
         }
         .uv-index {
             font-weight: 300 !important;
+        }
+    }
+}
+.future-temp {
+    .card {
+        width: 175px;
+        color: white;
+        background-color: var(--cta);
+
+        &:hover {
+            background-color: var(--cta-hover);
+        }
+        .stats {
+            .weather-icon {
+                
+            }
+            p {
+                font-weight: 200;
+            }
         }
     }
 }

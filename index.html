@@ -60,8 +60,8 @@
               <div class="col">
                 
                 <!-- TO REVIEW: Bootstrap Card is like a panel -->
-                <summary class="card mt-2">
-                  <div class="card-body current-temp">
+                <summary class="card mt-3 mb-3 current-temp">
+                  <div class="card-body">
                     <h2 class="mb-3 city-date">Atlanta (8/15/2019)</h2>
                     <div class="stats">
                       <p>Temperature: <span class="temp">90.9 °F</span></p>
@@ -73,14 +73,41 @@
                   </div>
                 </summary>
 
-              </div>
-            </div>
+
+              </div> <!-- col -->
+            </div> <!-- row -->
 
             <div class="row">
               <div class="col">
-                BR
-              </div>
-            </div>
+                
+                <!-- TO REVIEW: Bootstrap Masonry/PInterest layout uses .card-columns>.card -->
+                <summary class="future-temp card-columns">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title date">8/16/19</h3>
+                      <div class="stats">
+                        <p class="weather-icon p-3"></p>
+                        <p>Temp: <span class="temp">86.4 °F</span></p>
+                        <p>Humidity: <span class="humidity"></span>43%</span></p>
+                      </div>
+                    </div> <!-- card-body -->
+                  </div> <!-- card -->
+
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title date">8/16/19</h3>
+                      <div class="stats">
+                        <p class="weather-icon p-3"></p>
+                        <p>Temp: <span class="temp">86.4 °F</span></p>
+                        <p>Humidity: <span class="humidity"></span>43%</span></p>
+                      </div>
+                    </div> <!-- card-body -->
+                  </div> <!-- card -->
+                  
+                </summary>
+
+              </div> <!-- col -->
+            </div> <!-- row -->
           </article>
         </main>  
 

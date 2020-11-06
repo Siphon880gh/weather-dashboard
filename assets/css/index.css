@@ -36,31 +36,51 @@
   border: 1px solid var(--cta-hover-border);
 }
 
+/* line 34, scss/index.scss */
+h3 {
+  font-size: 1.25rem;
+}
+
 /** Components **/
-/* line 35, scss/index.scss */
+/* line 39, scss/index.scss */
 header {
   width: 100%;
   color: white;
   background-color: var(--header);
 }
 
-/* line 40, scss/index.scss */
+/* line 44, scss/index.scss */
 .search-history {
   margin-top: 15px;
 }
-/* line 42, scss/index.scss */
+/* line 46, scss/index.scss */
 .search-history .list-group-item:hover {
   cursor: pointer;
   background-color: lightgray;
   font-weight: 200;
 }
 
-/* line 50, scss/index.scss */
+/* line 54, scss/index.scss */
 .current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
 }
-/* line 54, scss/index.scss */
+/* line 58, scss/index.scss */
 .current-temp .stats .uv-index {
   font-weight: 300 !important;
+}
+
+/* line 64, scss/index.scss */
+.future-temp .card {
+  width: 175px;
+  color: white;
+  background-color: var(--cta);
+}
+/* line 69, scss/index.scss */
+.future-temp .card:hover {
+  background-color: var(--cta-hover);
+}
+/* line 76, scss/index.scss */
+.future-temp .card .stats p {
+  font-weight: 200;
 }
