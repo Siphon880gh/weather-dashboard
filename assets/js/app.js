@@ -1,5 +1,5 @@
 /**
- * @dependency MomentJS, quickTester
+ * @dependency MomentJS, quickTester, Popper JS
  */
 
 console.log("JS Connected");
@@ -8,8 +8,9 @@ let agency = function(published, subscriber) {
     subscriber(published);
 }
 
-// TODO: Right panel with current and future temperature should be blank or have a placeholder when no city was searched yet.
+
 // TODO: UV Index background color should change depending on its index
+// TODO: Persist searched cities. Limit how many cities get saved?
 
 /**
  * 
@@ -135,7 +136,57 @@ var app = {
 
         // Todo: Complete setWeather. It's supposed to render weather information
         setWeather: function(weatherObj) {
-            // alert(weatherObj);
+            // Empty both current temp and daily forecasts
+            $("summary").html("");
+
+            // TO REVIEW: No frontend handlebar JS needed! Vanilla JS can do it. Fill in <template> for current forecast with .replace
+            // Render current temp forecast
+            var template = $("#template-current-temp").clone().html();
+            template = template.replace("_city_", weatherObj.city);
+            template = template.replace("_date_", weatherObj.date);
+            template = template.replace("_icon_", weatherObj.icon);
+            template = template.replaceAll("_iconDescription_", weatherObj.iconDescription);
+            template = template.replace("_temp_", weatherObj.temperature);
+            template = template.replace("_humidity_", weatherObj.humidity);
+            template = template.replace("_speed_", weatherObj.speed);
+            template = template.replace("_uvi_", weatherObj.uvi);
+            $("summary.current-temp").html(template);
+
+            // Render daily forecast
+            // TO REVIEW: Is cloning going to affect performance? Is there a more optimized way?
+            weatherObj.daily.forEach(day=>{
+
+                var template = $("#template-daily-forecast").clone().html();
+                template = template.replace("_city_", day.city);
+                template = template.replace("_date_", day.date);
+                template = template.replace("_icon_", day.icon);
+                template = template.replaceAll("_iconDescription_", day.iconDescription);
+                template = template.replace("_temp_", day.temperature);
+                template = template.replace("_humidity_", day.humidity);
+                template = template.replace("_speed_", day.speed);
+                template = template.replace("_uvi_", day.uvi);
+                $("summary.future-temp").append( $(template) );
+            })
+
+            // Add tooltips for the weather icons. The tooltips describe the icon's weather condition
+            $('[data-toggle="tooltip"]').tooltip();
+
+            /**
+             * 
+             * 
+             * 
+             * 
+             * <h2 class="mb-3"><span class="city">_city_</span> (<span class="date">_date_</span>) <img class="img-icon" src="_icon_" alt="_icon_description"></img></h2>
+            <div class="stats">
+              <p>Temperature: <span class="temp">_temp_</span></p>
+              <p>Humidity: <span class="humidity"></span>_hudmity_</span></p>
+              <p>Wind Speed: <span class="wind-speed"></span>_speed_</span></p>
+              <p>UV Index: <span class="uv-index badge _uviBadgeType_ p-2">_uvi_</span></p>
+            </div> <!-- stats -->
+          </div> <!-- card-body -->
+             * 
+             * 
+             */
         }
     },
     controllers: {
