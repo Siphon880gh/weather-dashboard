@@ -152,39 +152,24 @@ var app = {
 
             // Render daily forecast
             // TO REVIEW: Is cloning going to affect performance? Is there a more optimized way?
+            // The daily forecasts do not need as much information as the current temperature, so they are commented out,
+            // in case we want to provide that information in a future version.
             weatherObj.daily.forEach(day=>{
 
                 var template = $("#template-daily-forecast").clone().html();
-                template = template.replace("_city_", day.city);
+                // template = template.replace("_city_", day.city);
                 template = template.replace("_date_", day.date);
                 template = template.replace("_icon_", day.icon);
                 template = template.replaceAll("_iconDescription_", day.iconDescription);
                 template = template.replace("_temp_", day.temperature);
                 template = template.replace("_humidity_", day.humidity);
-                template = template.replace("_speed_", day.speed);
-                template = template.replace("_uvi_", day.uvi);
+                // template = template.replace("_speed_", day.speed);
+                // template = template.replace("_uvi_", day.uvi);
                 $("summary.future-temp").append( $(template) );
             })
 
             // Add tooltips for the weather icons. The tooltips describe the icon's weather condition
             $('[data-toggle="tooltip"]').tooltip();
-
-            /**
-             * 
-             * 
-             * 
-             * 
-             * <h2 class="mb-3"><span class="city">_city_</span> (<span class="date">_date_</span>) <img class="img-icon" src="_icon_" alt="_icon_description"></img></h2>
-            <div class="stats">
-              <p>Temperature: <span class="temp">_temp_</span></p>
-              <p>Humidity: <span class="humidity"></span>_hudmity_</span></p>
-              <p>Wind Speed: <span class="wind-speed"></span>_speed_</span></p>
-              <p>UV Index: <span class="uv-index badge _uviBadgeType_ p-2">_uvi_</span></p>
-            </div> <!-- stats -->
-          </div> <!-- card-body -->
-             * 
-             * 
-             */
         }
     },
     controllers: {
