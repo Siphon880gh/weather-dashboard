@@ -7,9 +7,28 @@ console.log("JS Connected");
 let agency = function(published, subscriber) {
     subscriber(published);
 }
+
+
+/**
+ * 
+ * @object utility methods and properties for the entire app
+ * 
+ * @method getTodaysDate Returns today's date MM/DD/YYYY
+ * @method getTodaysDate Returns date MM/DD/YYYY in some days from today
+ * @property  tests.a    This will get the response from querying city name, for testing purposes.
+ * @property  tests.b    This will get the response from querying longitude and latitude which has more weather information, for testing purposes
+ * 
+ */
 let utility = {
     getTodaysDate() {
         return moment().format("MM/DD/YYYY");
+    },
+    getOffsetDate(addDays) {
+        moment().add(addDays, "days").format("MM/DD/YY")
+    },
+    tests: {
+        a: {},
+        b: {}
     }
 }
 /**
@@ -40,7 +59,7 @@ var app = {
                 if(quickTester.assert(typeof response.coord!=="undefined", "Querying Open Weather with city name failed because it did not return the city coordinates")) debugger;
 
                 let weatherObj = {
-                    today: utility.getTodaysDate(),
+                    date: utility.getTodaysDate(),
                     temperature: response.main.temp,
                     humidity: response.main.humidity,
                     speed: response.wind.speed
@@ -49,6 +68,9 @@ var app = {
                     lat: response.coord.lat,
                     lon: response.coord.lon
                 }
+
+                utility.tests.b = response;
+                console.dir(response);
 
                 app.models.getExpandedWeather(weatherObj, coords);
                 
@@ -62,7 +84,7 @@ var app = {
                 // Testing
                 if(quickTester.assert(typeof response.daily!=="undefined", "Querying Open Weather with longitude and latitude failed because it did not return the daily forecast")) debugger;
 
-                window.test = response;
+                utility.tests.b = response;
                 console.dir(response);
 
                 // More properties for weatherObj available after querying by longitude and latitude
