@@ -46,8 +46,13 @@ header {
     }
 }
 .current-temp {
-    p {
-        font-weight: 200;
-        line-height: 1.5rem;
+    .stats {
+        p {
+            font-weight: 200;
+            line-height: 1.5rem;
+        }
+        .uv-index {
+            font-weight: 300 !important;
+        }
     }
 }

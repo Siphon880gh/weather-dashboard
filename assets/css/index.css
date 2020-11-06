@@ -55,8 +55,12 @@ header {
   font-weight: 200;
 }
 
-/* line 49, scss/index.scss */
-.current-temp p {
+/* line 50, scss/index.scss */
+.current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
+}
+/* line 54, scss/index.scss */
+.current-temp .stats .uv-index {
+  font-weight: 300 !important;
 }
