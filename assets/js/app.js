@@ -1,16 +1,15 @@
 /**
- * @dependency MomentJS, quickTester, Popper JS
+ * @dependency history.js, MomentJS, quickTester, Popper JS
  */
+// TO REVIEW: Lots of dependencies. Come back to this after you learn how to do JS modules. Would be great if can import JS files inside JS files.
 
+ // Testing
 console.log("JS Connected");
 
+// TO REVIEW: Attempted publisher subscriber pattern. Come back later after you learn it. Most likely this is a wrong implementation
 let agency = function(published, subscriber) {
     subscriber(published);
 }
-
-
-// TODO: UV Index background color should change depending on its index
-// TODO: Persist searched cities. Limit how many cities get saved?
 
 /**
  * 
@@ -36,7 +35,7 @@ let utility = {
 }
 /**
  * @object app
- * TO REVIEW: Attempted MVC and publisher subscriber pattern (if I understood it correctly). Come back to this after learning MVC and publisher/subscriber
+ * TO REVIEW: Attempted MVC. Come back to this after learning MVC
  * 
  * @method getWeather Limitation: Querying their API with City name does not return 5 day forecast and UV index
  * @returns {object} Includes longitude and latitude
@@ -124,15 +123,7 @@ var app = {
     }, // models
     views: {
         init: function() {
-            // Can click old cities to view their information
-            $(".search-history-city").on("click", function() {
-                let oldCity = $(this).text();
-                $("#search-city").val( oldCity );
-                $("#search-city-button").click();
-            })
         },
-
-        // Todo: Complete setWeather. It's supposed to render weather information
         setWeather: function(weatherObj) {
             // Empty both current temp and daily forecasts
             $("summary").html("");
@@ -175,7 +166,7 @@ var app = {
     },
     controllers: {
         init: function() {
-
+            // Clicking search icon will search the city for weather information
             $("#search-city-button").on("click", ()=>{
                 // Get text
                 let queryCity = $("#search-city").val();
@@ -183,7 +174,8 @@ var app = {
                     alert("Error: Please enter a city name to search for weather forecast");
                     return false;
                 }
-                agency(queryCity, (city)=>{app.models.getWeather(city)})
+                saveHistoryCities(queryCity);
+                agency(queryCity, (city)=>{app.models.getWeather(city)});
             });
         },
         /**
@@ -195,7 +187,8 @@ var app = {
          * 
          */
         uviToBadgeColorClass: function(uvi) {
-            console.log("uvi type:"+typeof uvi);
+            // console.log("uvi type:"+typeof uvi);
+
             if(uvi<=2)
                 return "badge-lt2";
             else if(uvi>2 && uvi<=5)
@@ -205,7 +198,7 @@ var app = {
             else if(uvi>7 && uvi<=10)
                 return "badge-btw7-10";
             else if(uvi>10)
-                return "badge-gt11";
+                return "badge-gt10";
         } // uviToBadgeColorClass
     } // controllers
 } // app

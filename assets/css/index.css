@@ -145,7 +145,7 @@ header {
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 111, scss/index.scss */
+/* line 108, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }
