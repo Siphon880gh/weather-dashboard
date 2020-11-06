@@ -148,6 +148,7 @@ var app = {
             template = template.replace("_humidity_", weatherObj.humidity);
             template = template.replace("_speed_", weatherObj.speed);
             template = template.replace("_uvi_", weatherObj.uvi);
+            template = template.replace("_uviBadgeType_", app.controllers.uviToBadgeColorClass(weatherObj.uvi))
             $("summary.current-temp").html(template);
 
             // Render daily forecast
@@ -184,9 +185,30 @@ var app = {
                 }
                 agency(queryCity, (city)=>{app.models.getWeather(city)})
             });
-        }
-    }
-}
+        },
+        /**
+         * 
+         * @method uviToBadgeColorClass
+         * @param {float} uvi UV index exposure risks are as follow:
+         *                    1-2 low risk, 2-5 moderate, 5-7 high, 7-10 very high, >10 extreme
+         * @returns (string)  Styling class that will color an UV index element based on risk level
+         * 
+         */
+        uviToBadgeColorClass: function(uvi) {
+            console.log("uvi type:"+typeof uvi);
+            if(uvi<=2)
+                return "badge-lt2";
+            else if(uvi>2 && uvi<=5)
+                return "badge-btw2-5";
+            else if(uvi>5 && uvi<=7)
+                return "badge-btw5-7";
+            else if(uvi>7 && uvi<=10)
+                return "badge-btw7-10";
+            else if(uvi>10)
+                return "badge-gt11";
+        } // uviToBadgeColorClass
+    } // controllers
+} // app
 
 app.models.init();
 app.views.init();

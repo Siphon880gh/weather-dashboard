@@ -16,33 +16,59 @@
   --left-panel: rgba(233, 236, 239, 0.2);
 }
 
-/** General Layout **/
+/** UV Index colors */
 /* line 22, scss/index.scss */
+.badge-lt2 {
+  background-color: #83c88b;
+}
+
+/* line 23, scss/index.scss */
+.badge-btw2-5 {
+  background-color: #ffdc01;
+}
+
+/* line 24, scss/index.scss */
+.badge-btw5-7 {
+  background-color: #f89c1c;
+}
+
+/* line 25, scss/index.scss */
+.badge-btw7-10 {
+  background-color: #ee1d23;
+}
+
+/* line 26, scss/index.scss */
+.badge-gt10 {
+  background-color: #d83484;
+}
+
+/** General Layout **/
+/* line 29, scss/index.scss */
 .container-fluid {
   padding: 0;
 }
 
-/* line 25, scss/index.scss */
+/* line 32, scss/index.scss */
 .display-5 {
   font-size: 1.5rem;
 }
 
-/* line 28, scss/index.scss */
+/* line 35, scss/index.scss */
 .btn-primary {
   background-color: var(--cta);
   color: white;
 }
-/* line 31, scss/index.scss */
+/* line 38, scss/index.scss */
 .btn-primary:hover {
   border: 1px solid var(--cta-hover-border);
 }
 
-/* line 35, scss/index.scss */
+/* line 42, scss/index.scss */
 h3 {
   font-size: 1.25rem;
 }
 
-/* line 38, scss/index.scss */
+/* line 45, scss/index.scss */
 .img-icon {
   width: 30px;
   height: 30px;
@@ -50,64 +76,64 @@ h3 {
 }
 
 /** Components **/
-/* line 45, scss/index.scss */
+/* line 52, scss/index.scss */
 header {
   width: 100%;
   color: white;
   background-color: var(--header);
 }
 
-/* line 50, scss/index.scss */
+/* line 57, scss/index.scss */
 .left-panel-bgc {
   background-color: var(--left-panel);
 }
 
-/* line 53, scss/index.scss */
+/* line 60, scss/index.scss */
 .search-history {
   margin-top: 15px;
 }
-/* line 55, scss/index.scss */
+/* line 62, scss/index.scss */
 .search-history .list-group-item:hover {
   cursor: pointer;
   background-color: lightgray;
   font-weight: 200;
 }
 
-/* line 61, scss/index.scss */
+/* line 68, scss/index.scss */
 .current-temp {
   cursor: default;
 }
-/* line 64, scss/index.scss */
+/* line 71, scss/index.scss */
 .current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
 }
-/* line 68, scss/index.scss */
+/* line 75, scss/index.scss */
 .current-temp .stats .uv-index {
   font-weight: 300 !important;
 }
 
-/* line 73, scss/index.scss */
+/* line 80, scss/index.scss */
 .current-temp:empty {
   border: 0;
   color: gray;
   font-size: 1.5rem;
   font-weight: 300;
 }
-/* line 78, scss/index.scss */
+/* line 85, scss/index.scss */
 .current-temp:empty::before {
   content: "No weather information searched yet.";
   height: 30px;
   width: 100%;
 }
 
-/* line 85, scss/index.scss */
+/* line 92, scss/index.scss */
 .future-temp {
   -webkit-column-count: 1;
   -moz-column-count: 1;
   column-count: 1;
 }
-/* line 90, scss/index.scss */
+/* line 97, scss/index.scss */
 .future-temp .card {
   width: 200px;
   color: white;
@@ -115,11 +141,11 @@ header {
   flex-wrap: wrap;
   cursor: default;
 }
-/* line 97, scss/index.scss */
+/* line 104, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 104, scss/index.scss */
+/* line 111, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }

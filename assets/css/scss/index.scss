@@ -18,6 +18,13 @@ body::before {
     --left-panel: rgba(233, 236, 239, .2);
 }
 
+/** UV Index colors */
+.badge-lt2 { background-color: #83c88b }
+.badge-btw2-5 { background-color: #ffdc01 }
+.badge-btw5-7 { background-color: #f89c1c }
+.badge-btw7-10 { background-color: #ee1d23 }
+.badge-gt10 { background-color: #d83484 }
+
 /** General Layout **/
 .container-fluid {
     padding: 0;
