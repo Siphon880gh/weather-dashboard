@@ -135,9 +135,9 @@ var app = {
             template = template.replace("_date_", weatherObj.date);
             template = template.replace("_icon_", weatherObj.icon);
             template = template.replaceAll("_iconDescription_", weatherObj.iconDescription);
-            template = template.replace("_temp_", weatherObj.temperature);
-            template = template.replace("_humidity_", weatherObj.humidity);
-            template = template.replace("_speed_", weatherObj.speed);
+            template = template.replace("_temp_", weatherObj.temperature + " °F");
+            template = template.replace("_humidity_", weatherObj.humidity + "%");
+            template = template.replace("_speed_", weatherObj.speed + " MPH");
             template = template.replace("_uvi_", weatherObj.uvi);
             template = template.replace("_uviBadgeType_", app.controllers.uviToBadgeColorClass(weatherObj.uvi))
             $("summary.current-temp").html(template);
@@ -153,8 +153,8 @@ var app = {
                 template = template.replace("_date_", day.date);
                 template = template.replace("_icon_", day.icon);
                 template = template.replaceAll("_iconDescription_", day.iconDescription);
-                template = template.replace("_temp_", day.temperature);
-                template = template.replace("_humidity_", day.humidity);
+                template = template.replace("_temp_", day.temperature + " °F");
+                template = template.replace("_humidity_", day.humidity + "%");
                 // template = template.replace("_speed_", day.speed);
                 // template = template.replace("_uvi_", day.uvi);
                 $("summary.future-temp").append( $(template) );
