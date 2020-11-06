@@ -3,10 +3,17 @@ body::before {
     // content: "CSS Connected";
 }
 
+/** Reset **/
+:root {
+    box-sizing: border-box;
+}
+
 /** Theme **/
 :root {
     --header: #343A40;
     --cta: #027BFF;
+    --cta-hover: rgba(0, 98, 204, 1);
+    --cta-hover-border: rgba(0, 98, 204, .5);
     --red: #DC3545;
 }
 
@@ -14,12 +21,28 @@ body::before {
 .container-fluid {
     padding: 0;
 }
-
+.display-5 {
+    font-size: 1.5rem;
+}
+.btn-primary {
+    background-color: var(--cta);
+    color: white;
+    &:hover {
+        border: 1px solid var(--cta-hover-border);
+    }
+}
 /** Components **/
 header {
     width: 100%;
     padding: 5px;
-    text-align: center;
     color: white;
     background-color: var(--header);
+}
+.search-history {
+    margin-top: 15px;
+    .list-group-item:hover {
+        cursor: pointer;
+        background-color: lightgray;
+        font-weight: 200;
+    }
 }

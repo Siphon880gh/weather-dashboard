@@ -1,24 +1,57 @@
 /** Testing **/
-/** Theme **/
+/** Reset **/
 /* line 7, scss/index.scss */
+:root {
+  box-sizing: border-box;
+}
+
+/** Theme **/
+/* line 12, scss/index.scss */
 :root {
   --header: #343A40;
   --cta: #027BFF;
+  --cta-hover: #0062cc;
+  --cta-hover-border: rgba(0, 98, 204, 0.5);
   --red: #DC3545;
 }
 
 /** General Layout **/
-/* line 14, scss/index.scss */
+/* line 21, scss/index.scss */
 .container-fluid {
   padding: 0;
 }
 
+/* line 24, scss/index.scss */
+.display-5 {
+  font-size: 1.5rem;
+}
+
+/* line 27, scss/index.scss */
+.btn-primary {
+  background-color: var(--cta);
+  color: white;
+}
+/* line 30, scss/index.scss */
+.btn-primary:hover {
+  border: 1px solid var(--cta-hover-border);
+}
+
 /** Components **/
-/* line 19, scss/index.scss */
+/* line 35, scss/index.scss */
 header {
   width: 100%;
   padding: 5px;
-  text-align: center;
   color: white;
   background-color: var(--header);
+}
+
+/* line 41, scss/index.scss */
+.search-history {
+  margin-top: 15px;
+}
+/* line 43, scss/index.scss */
+.search-history .list-group-item:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  font-weight: 200;
 }
