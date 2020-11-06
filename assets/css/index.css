@@ -40,18 +40,23 @@
 /* line 35, scss/index.scss */
 header {
   width: 100%;
-  padding: 5px;
   color: white;
   background-color: var(--header);
 }
 
-/* line 41, scss/index.scss */
+/* line 40, scss/index.scss */
 .search-history {
   margin-top: 15px;
 }
-/* line 43, scss/index.scss */
+/* line 42, scss/index.scss */
 .search-history .list-group-item:hover {
   cursor: pointer;
   background-color: lightgray;
   font-weight: 200;
+}
+
+/* line 49, scss/index.scss */
+.current-temp p {
+  font-weight: 200;
+  line-height: 1.5rem;
 }

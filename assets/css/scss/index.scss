@@ -34,7 +34,6 @@ body::before {
 /** Components **/
 header {
     width: 100%;
-    padding: 5px;
     color: white;
     background-color: var(--header);
 }
@@ -44,5 +43,11 @@ header {
         cursor: pointer;
         background-color: lightgray;
         font-weight: 200;
+    }
+}
+.current-temp {
+    p {
+        font-weight: 200;
+        line-height: 1.5rem;
     }
 }
