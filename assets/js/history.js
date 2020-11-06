@@ -1,6 +1,5 @@
 /**
- * @overview Persistently save and load history of city searches. Limit to 8 cities.
- * @dependency app.js
+ * @overview Persistently save and load history of city searches. Limit to 5 cities.
  */
 
  function loadHistoryCities() {
