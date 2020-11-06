@@ -117,6 +117,7 @@ var app = {
 
 
                 console.log("Final weather object for rendering", weatherObj);
+                app.views.setWeather(weatherObj);
 
         }) // fetch
      }, // getExpandedWeather
@@ -134,7 +135,7 @@ var app = {
 
         // Todo: Complete setWeather. It's supposed to render weather information
         setWeather: function(weatherObj) {
-            alert(weatherObj);
+            // alert(weatherObj);
         }
     },
     controllers: {

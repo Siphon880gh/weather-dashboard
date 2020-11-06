@@ -42,51 +42,77 @@ h3 {
   font-size: 1.25rem;
 }
 
+/* line 38, scss/index.scss */
+.img-icon {
+  width: 30px;
+  height: 30px;
+  border: 0;
+}
+
+/* line 43, scss/index.scss */
+.img-icon:empty {
+  display: none;
+}
+
 /** Components **/
-/* line 40, scss/index.scss */
+/* line 48, scss/index.scss */
 header {
   width: 100%;
   color: white;
   background-color: var(--header);
 }
 
-/* line 45, scss/index.scss */
+/* line 53, scss/index.scss */
 .left-panel-bgc {
   background-color: var(--left-panel);
 }
 
-/* line 48, scss/index.scss */
+/* line 56, scss/index.scss */
 .search-history {
   margin-top: 15px;
 }
-/* line 50, scss/index.scss */
+/* line 58, scss/index.scss */
 .search-history .list-group-item:hover {
   cursor: pointer;
   background-color: lightgray;
   font-weight: 200;
 }
 
-/* line 56, scss/index.scss */
+/* line 64, scss/index.scss */
 .current-temp {
   cursor: default;
 }
-/* line 59, scss/index.scss */
+/* line 67, scss/index.scss */
 .current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
 }
-/* line 63, scss/index.scss */
+/* line 71, scss/index.scss */
 .current-temp .stats .uv-index {
   font-weight: 300 !important;
 }
 
-/* line 69, scss/index.scss */
+/* line 76, scss/index.scss */
+.current-temp:empty {
+  border: 0;
+  color: gray;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+/* line 81, scss/index.scss */
+.current-temp:empty::before {
+  content: "No weather information searched yet.";
+  height: 30px;
+  width: 100%;
+}
+
+/* line 88, scss/index.scss */
 .future-temp {
   -webkit-column-count: 1;
   -moz-column-count: 1;
   column-count: 1;
 }
-/* line 74, scss/index.scss */
+/* line 93, scss/index.scss */
 .future-temp .card {
   width: 200px;
   color: white;
@@ -94,11 +120,11 @@ header {
   flex-wrap: wrap;
   cursor: default;
 }
-/* line 81, scss/index.scss */
+/* line 100, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 88, scss/index.scss */
+/* line 107, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }

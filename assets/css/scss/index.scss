@@ -35,6 +35,14 @@ body::before {
 h3 {
     font-size: 1.25rem;
 }
+.img-icon {
+    width: 30px;
+    height: 30px;
+    border: 0;
+}
+.img-icon:empty {
+    display: none;
+}
 
 /** Components **/
 header {
@@ -63,6 +71,17 @@ header {
         .uv-index {
             font-weight: 300 !important;
         }
+    }
+}
+.current-temp:empty {
+    border: 0;
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: 300;
+    &::before {
+        content: "No weather information searched yet.";
+        height: 30px;
+        width:100%;
     }
 }
 
