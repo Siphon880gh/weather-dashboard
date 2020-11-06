@@ -9,6 +9,7 @@ let agency = function(published, subscriber) {
 }
 
 // TODO: Right panel with current and future temperature should be blank or have a placeholder when no city was searched yet.
+// TODO: UV Index background color should change depending on its index
 
 /**
  * 
@@ -25,7 +26,7 @@ let utility = {
         return moment().format("MM/DD/YYYY");
     },
     getOffsetDate(addDays) {
-        moment().add(addDays, "days").format("MM/DD/YY")
+        return moment().add(addDays, "days").format("MM/DD/YY");
     },
     tests: {
         a: {},
@@ -46,7 +47,7 @@ let utility = {
  */
 var app = {
     apiKey: "51d896b9c9317052fd630d3fc467c276",
-    /* TODO: Complete convertDescriptionToIcon. It's supposed to get from iconDescription into a wi-icon */
+    /* TODO: Complete convertDescriptionToIcon. It's supposed to get from iconDescription into a wi-icon if we choose to go with Weather Icons project style rather than Open Weather Icons style */
     convertDescriptionToIcon: function(iconDescription) {},
     models: {
         init: function() {
@@ -62,9 +63,10 @@ var app = {
                     city,
                     date: utility.getTodaysDate(),
                     iconDescription: response.weather[0].description,
+                    icon: "http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png",
                     temperature: response.main.temp,
                     humidity: response.main.humidity,
-                    speed: response.wind.speed,
+                    speed: response.wind.speed
                 }
                 let coords = {
                     lat: response.coord.lat,
@@ -73,8 +75,8 @@ var app = {
 
                 // Testing purposes
                 utility.tests.a = response;
-                console.dir(city + "\n------------------");
-                console.dir(response);
+                console.log(city + "\n------------------");
+                console.log("Query city name response: ", response);
 
                 // Get more into weatherObj (UV index and daily forecast)
                 app.models.getExpandedWeather(weatherObj, coords);
@@ -91,14 +93,35 @@ var app = {
 
                 // Testing purposes
                 utility.tests.b = response;
-                console.dir(response);
+                console.log("Query longitude/latitude response: ", response);
 
                 // More properties for weatherObj available after querying by longitude and latitude
                 weatherObj.uvi = response.current.uvi;
-                
-            });
-        }
-    },
+                weatherObj.daily = [];
+
+                // Get daily forecast
+                response.daily.forEach((day,i)=>{ 
+                    // console.log("Should be num: " + i);
+                    weatherObj.daily.push(
+                        {
+                        city: weatherObj.city,
+                        date: utility.getOffsetDate(i+1),
+                        iconDescription: day.weather[0].description,
+                        icon: "http://openweathermap.org/img/wn/" + day.weather[0].icon + ".png",
+                        temperature: day.temp.day,
+                        humidity: day.humidity,
+                        speed: day.wind_speed,
+                        uvi: day.uvi
+                    }); // push
+                }); // forEach daily from response
+
+
+                console.log("Final weather object for rendering", weatherObj);
+
+        }) // fetch
+     }, // getExpandedWeather
+
+    }, // models
     views: {
         init: function() {
             // Can click old cities to view their information
