@@ -4,7 +4,7 @@ Assigned to Weng Fei Fung. Search cities for their weather outlook so you can pl
 
 Demo
 ---
-Open the [city weather dashboard](//Siphon880gh.github.io/ucla-weather-dashboard)
+Open the [city weather dashboard](https://siphon880gh.github.io/ucla-weather-dashboard/)
 
 
 Features
