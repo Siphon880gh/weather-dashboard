@@ -8,6 +8,7 @@ let agency = function(published, subscriber) {
     subscriber(published);
 }
 
+// TODO: Right panel with current and future temperature should be blank or have a placeholder when no city was searched yet.
 
 /**
  * 
