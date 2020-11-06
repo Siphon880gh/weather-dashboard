@@ -1,0 +1,15 @@
+{
+  "name": "ucla-weather-dashboard",
+  "version": "1.0.0",
+  "description": "Weather Dashboard === Assigned to Weng Fei Fung. Search cities for their weather outlook so you can plan your trips accordingly. Great for travelers.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "concurrently 'compass watch ./' 'livereload .'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "livereload-js": "^3.2.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
