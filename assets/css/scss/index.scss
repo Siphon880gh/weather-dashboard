@@ -54,6 +54,7 @@ header {
     }
 }
 .current-temp {
+    cursor: default;
     .stats {
         p {
             font-weight: 200;
@@ -75,6 +76,7 @@ header {
         color: white;
         background-color: var(--cta);
         flex-wrap: wrap;
+        cursor: default;
 
         &:hover {
             background-color: var(--cta-hover);

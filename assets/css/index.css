@@ -66,34 +66,39 @@ header {
   font-weight: 200;
 }
 
-/* line 58, scss/index.scss */
+/* line 56, scss/index.scss */
+.current-temp {
+  cursor: default;
+}
+/* line 59, scss/index.scss */
 .current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
 }
-/* line 62, scss/index.scss */
+/* line 63, scss/index.scss */
 .current-temp .stats .uv-index {
   font-weight: 300 !important;
 }
 
-/* line 68, scss/index.scss */
+/* line 69, scss/index.scss */
 .future-temp {
   -webkit-column-count: 1;
   -moz-column-count: 1;
   column-count: 1;
 }
-/* line 73, scss/index.scss */
+/* line 74, scss/index.scss */
 .future-temp .card {
   width: 200px;
   color: white;
   background-color: var(--cta);
   flex-wrap: wrap;
+  cursor: default;
 }
-/* line 79, scss/index.scss */
+/* line 81, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 86, scss/index.scss */
+/* line 88, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }
