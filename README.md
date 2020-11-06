@@ -18,7 +18,7 @@ Weather information includes:
 - Current and future conditions for that city
 
 - Current information: City name, date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-    - UV index: When clicked, you see a color that indicates whether the UV condition is favorable, moderate, or severe
+    - UV index: A color that indicates whether the UV condition is favorable, moderate, or severe
 
 - Future weather conditions: 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
 
