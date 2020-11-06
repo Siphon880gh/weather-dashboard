@@ -26,6 +26,6 @@ Screenshots
 ---
 ![Dashboard Screenshot](README/06-server-side-apis-homework-demo.png)
 
-Technical
+Credits
 ---
-Uses the OpenWeather API. 
+Uses the OpenWeather API and the Weather Icons project.
