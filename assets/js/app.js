@@ -45,11 +45,10 @@ let utility = {
  */
 var app = {
     apiKey: "51d896b9c9317052fd630d3fc467c276",
+    /* TODO: Complete convertDescriptionToIcon. It's supposed to get from iconDescription into a wi-icon */
+    convertDescriptionToIcon: function(iconDescription) {},
     models: {
         init: function() {
-            // $.get("//api.openweathermap.org/data/2.5/weather?q=Los%20Angeles&appid=").then(response=>{ 
-            //     console.log(response);
-            // });
         },
         getWeather: function(city) {
             let apiKey = app.apiKey;
@@ -59,20 +58,24 @@ var app = {
                 if(quickTester.assert(typeof response.coord!=="undefined", "Querying Open Weather with city name failed because it did not return the city coordinates")) debugger;
 
                 let weatherObj = {
+                    city,
                     date: utility.getTodaysDate(),
+                    iconDescription: response.weather[0].description,
                     temperature: response.main.temp,
                     humidity: response.main.humidity,
-                    speed: response.wind.speed
+                    speed: response.wind.speed,
                 }
                 let coords = {
                     lat: response.coord.lat,
                     lon: response.coord.lon
                 }
 
+                // Testing purposes
                 utility.tests.a = response;
                 console.dir(city + "\n------------------");
                 console.dir(response);
 
+                // Get more into weatherObj (UV index and daily forecast)
                 app.models.getExpandedWeather(weatherObj, coords);
                 
             });
@@ -85,6 +88,7 @@ var app = {
                 // Testing
                 if(quickTester.assert(typeof response.daily!=="undefined", "Querying Open Weather with longitude and latitude failed because it did not return the daily forecast")) debugger;
 
+                // Testing purposes
                 utility.tests.b = response;
                 console.dir(response);
 
@@ -103,6 +107,8 @@ var app = {
                 $("#search-city-button").click();
             })
         },
+
+        // Todo: Complete setWeather. It's supposed to render weather information
         setWeather: function(weatherObj) {
             alert(weatherObj);
         }
