@@ -5,8 +5,18 @@
   box-sizing: border-box;
 }
 
-/** Theme **/
+/** Icons **/
 /* line 12, scss/index.scss */
+.icon {
+  font-family: 'weathericons';
+  src: url("../../font/weathericons-regular-webfont.eot");
+  src: url("../../font/weathericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../font/weathericons-regular-webfont.woff") format("woff"), url("../../font/weathericons-regular-webfont.ttf") format("truetype"), url("../../font/weathericons-regular-webfont.svg#weathericons-regular-webfontRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/** Theme **/
+/* line 21, scss/index.scss */
 :root {
   --header: #343A40;
   --cta: #027BFF;
@@ -16,71 +26,71 @@
 }
 
 /** General Layout **/
-/* line 21, scss/index.scss */
+/* line 30, scss/index.scss */
 .container-fluid {
   padding: 0;
 }
 
-/* line 24, scss/index.scss */
+/* line 33, scss/index.scss */
 .display-5 {
   font-size: 1.5rem;
 }
 
-/* line 27, scss/index.scss */
+/* line 36, scss/index.scss */
 .btn-primary {
   background-color: var(--cta);
   color: white;
 }
-/* line 30, scss/index.scss */
+/* line 39, scss/index.scss */
 .btn-primary:hover {
   border: 1px solid var(--cta-hover-border);
 }
 
-/* line 34, scss/index.scss */
+/* line 43, scss/index.scss */
 h3 {
   font-size: 1.25rem;
 }
 
 /** Components **/
-/* line 39, scss/index.scss */
+/* line 48, scss/index.scss */
 header {
   width: 100%;
   color: white;
   background-color: var(--header);
 }
 
-/* line 44, scss/index.scss */
+/* line 53, scss/index.scss */
 .search-history {
   margin-top: 15px;
 }
-/* line 46, scss/index.scss */
+/* line 55, scss/index.scss */
 .search-history .list-group-item:hover {
   cursor: pointer;
   background-color: lightgray;
   font-weight: 200;
 }
 
-/* line 54, scss/index.scss */
+/* line 63, scss/index.scss */
 .current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
 }
-/* line 58, scss/index.scss */
+/* line 67, scss/index.scss */
 .current-temp .stats .uv-index {
   font-weight: 300 !important;
 }
 
-/* line 64, scss/index.scss */
+/* line 73, scss/index.scss */
 .future-temp .card {
   width: 175px;
   color: white;
   background-color: var(--cta);
 }
-/* line 69, scss/index.scss */
+/* line 78, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 76, scss/index.scss */
+/* line 85, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }
