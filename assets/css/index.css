@@ -1,0 +1,24 @@
+/** Testing **/
+/** Theme **/
+/* line 7, scss/index.scss */
+:root {
+  --header: #343A40;
+  --cta: #027BFF;
+  --red: #DC3545;
+}
+
+/** General Layout **/
+/* line 14, scss/index.scss */
+.container-fluid {
+  padding: 0;
+}
+
+/** Components **/
+/* line 19, scss/index.scss */
+header {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  background-color: var(--header);
+}
