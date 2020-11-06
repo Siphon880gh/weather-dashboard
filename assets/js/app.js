@@ -48,8 +48,6 @@ let utility = {
  */
 var app = {
     apiKey: "51d896b9c9317052fd630d3fc467c276",
-    /* TODO: Complete convertDescriptionToIcon. It's supposed to get from iconDescription into a wi-icon if we choose to go with Weather Icons project style rather than Open Weather Icons style */
-    convertDescriptionToIcon: function(iconDescription) {},
     models: {
         init: function() {
         },

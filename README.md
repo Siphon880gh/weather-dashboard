@@ -28,4 +28,5 @@ Screenshots
 
 Credits
 ---
-Uses the OpenWeather API and the Weather Icons project.
+- Forecast weather data from OpenWeather API. 
+- Weather icons from OpenWeather. Originally were from Weather Icons project by erikflowers in older commits; Abandoned for logic and stylistic choices.
