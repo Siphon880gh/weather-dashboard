@@ -13,81 +13,87 @@
   --cta-hover: #0062cc;
   --cta-hover-border: rgba(0, 98, 204, 0.5);
   --red: #DC3545;
+  --left-panel: rgba(233, 236, 239, 0.2);
 }
 
 /** General Layout **/
-/* line 21, scss/index.scss */
+/* line 22, scss/index.scss */
 .container-fluid {
   padding: 0;
 }
 
-/* line 24, scss/index.scss */
+/* line 25, scss/index.scss */
 .display-5 {
   font-size: 1.5rem;
 }
 
-/* line 27, scss/index.scss */
+/* line 28, scss/index.scss */
 .btn-primary {
   background-color: var(--cta);
   color: white;
 }
-/* line 30, scss/index.scss */
+/* line 31, scss/index.scss */
 .btn-primary:hover {
   border: 1px solid var(--cta-hover-border);
 }
 
-/* line 34, scss/index.scss */
+/* line 35, scss/index.scss */
 h3 {
   font-size: 1.25rem;
 }
 
 /** Components **/
-/* line 39, scss/index.scss */
+/* line 40, scss/index.scss */
 header {
   width: 100%;
   color: white;
   background-color: var(--header);
 }
 
-/* line 44, scss/index.scss */
+/* line 45, scss/index.scss */
+.left-panel-bgc {
+  background-color: var(--left-panel);
+}
+
+/* line 48, scss/index.scss */
 .search-history {
   margin-top: 15px;
 }
-/* line 46, scss/index.scss */
+/* line 50, scss/index.scss */
 .search-history .list-group-item:hover {
   cursor: pointer;
   background-color: lightgray;
   font-weight: 200;
 }
 
-/* line 54, scss/index.scss */
+/* line 58, scss/index.scss */
 .current-temp .stats p {
   font-weight: 200;
   line-height: 1.5rem;
 }
-/* line 58, scss/index.scss */
+/* line 62, scss/index.scss */
 .current-temp .stats .uv-index {
   font-weight: 300 !important;
 }
 
-/* line 64, scss/index.scss */
+/* line 68, scss/index.scss */
 .future-temp {
   -webkit-column-count: 1;
   -moz-column-count: 1;
   column-count: 1;
 }
-/* line 69, scss/index.scss */
+/* line 73, scss/index.scss */
 .future-temp .card {
   width: 200px;
   color: white;
   background-color: var(--cta);
   flex-wrap: wrap;
 }
-/* line 75, scss/index.scss */
+/* line 79, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 82, scss/index.scss */
+/* line 86, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }

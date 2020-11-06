@@ -15,6 +15,7 @@ body::before {
     --cta-hover: rgba(0, 98, 204, 1);
     --cta-hover-border: rgba(0, 98, 204, .5);
     --red: #DC3545;
+    --left-panel: rgba(233, 236, 239, .2);
 }
 
 /** General Layout **/
@@ -40,6 +41,9 @@ header {
     width: 100%;
     color: white;
     background-color: var(--header);
+}
+.left-panel-bgc {
+    background-color: var(--left-panel);
 }
 .search-history {
     margin-top: 15px;
