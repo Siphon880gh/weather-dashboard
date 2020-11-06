@@ -69,7 +69,8 @@ var app = {
                     lon: response.coord.lon
                 }
 
-                utility.tests.b = response;
+                utility.tests.a = response;
+                console.dir(city + "\n------------------");
                 console.dir(response);
 
                 app.models.getExpandedWeather(weatherObj, coords);
@@ -95,6 +96,12 @@ var app = {
     },
     views: {
         init: function() {
+            // Can click old cities to view their information
+            $(".search-history-city").on("click", function() {
+                let oldCity = $(this).text();
+                $("#search-city").val( oldCity );
+                $("#search-city-button").click();
+            })
         },
         setWeather: function(weatherObj) {
             alert(weatherObj);
