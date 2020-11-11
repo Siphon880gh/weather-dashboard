@@ -21,30 +21,33 @@ let agency = function(published, subscriber) {
  * @property  tests.b    This will get the response from querying longitude and latitude which has more weather information, for testing purposes
  * 
  */
+
 let utility = {
-        getTodaysDate() {
-            return moment().format("MM/DD/YYYY");
-        },
-        getOffsetDate(addDays) {
-            return moment().add(addDays, "days").format("MM/DD/YY");
-        },
-        tests: {
-            a: {},
-            b: {}
-        }
+    getTodaysDate() {
+        return moment().format("MM/DD/YYYY");
+    },
+    getOffsetDate(addDays) {
+        return moment().add(addDays, "days").format("MM/DD/YY");
+    },
+    tests: {
+        a: {},
+        b: {}
     }
-    /**
-     * @object app
-     * TO REVIEW: Attempted MVC. Come back to this after learning MVC
-     * 
-     * @method getWeather Limitation: Querying their API with City name does not return 5 day forecast and UV index
-     * @returns {object} Includes longitude and latitude
-     * {"coord":{"lon":-118.24,"lat":34.05},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":289.51,"feels_like":288.87,"temp_min":289.15,"temp_max":290.15,"pressure":1007,"humidity":82},"visibility":10000,"wind":{"speed":2.38,"deg":124},"clouds":{"all":40},"dt":1604671262,"sys":{"type":1,"id":4361,"country":"US","sunrise":1604672262,"sunset":1604710533},"timezone":-28800,"id":5368361,"name":"Los Angeles","cod":200}
-     * 
-     * @method getExpandedWeather Only after getting the longitude and latitude from a city search, can you get the 5 day forecast and UV index by querying their API with longitude and latitude
-     * @returns {object} Includes 5 day forecast and UV index
-     * 
-     */
+}
+
+/**
+ * @object app
+ * TO REVIEW: Attempted MVC. Come back to this after learning MVC
+ * 
+ * @method getWeather Limitation: Querying their API with City name does not return 5 day forecast and UV index
+ * @returns {object} Includes longitude and latitude
+ * {"coord":{"lon":-118.24,"lat":34.05},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],"base":"stations","main":{"temp":289.51,"feels_like":288.87,"temp_min":289.15,"temp_max":290.15,"pressure":1007,"humidity":82},"visibility":10000,"wind":{"speed":2.38,"deg":124},"clouds":{"all":40},"dt":1604671262,"sys":{"type":1,"id":4361,"country":"US","sunrise":1604672262,"sunset":1604710533},"timezone":-28800,"id":5368361,"name":"Los Angeles","cod":200}
+ * 
+ * @method getExpandedWeather Only after getting the longitude and latitude from a city search, can you get the 5 day forecast and UV index by querying their API with longitude and latitude
+ * @returns {object} Includes 5 day forecast and UV index
+ * 
+ */
+
 var app = {
         apiKey: "51d896b9c9317052fd630d3fc467c276",
         models: {
