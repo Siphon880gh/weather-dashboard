@@ -1,10 +1,10 @@
 Weather Dashboard
 ===
-Assigned to Weng Fei Fung. Search cities for their weather outlook so you can plan your trips accordingly. Great for travelers.
+By Weng Fei Fung. Weather forecast. Shows today's weather forecast as well as the next five days. Make it your homepage to stay up to date on the weather! Or use it to plan your trips.
 
 Demo
 ---
-Open the [city weather dashboard](https://siphon880gh.github.io/ucla-weather-dashboard/)
+Open the [weather dashboard](https://siphon880gh.github.io/weather-dashboard/)
 
 
 Features
@@ -24,7 +24,7 @@ Weather information includes:
 
 Screenshots
 ---
-![Dashboard Screenshot](README/06-server-side-apis-homework-demo.png)
+![Dashboard Screenshot](README/06-server-side-apis-demo.png)
 
 Credits
 ---
