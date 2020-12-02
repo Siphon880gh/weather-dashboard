@@ -123,7 +123,15 @@ var app = {
 
         }, // models
         views: {
-            init: function() {},
+            init: function() {
+                // At the start of the app, load old cities that were searched
+                let hasOldCities = loadHistoryCities();
+
+                // If old cities were loaded, then load the forecast for the most recently searched city
+                if (hasOldCities) {
+                    $(".list-group .list-group-item").eq(0).click();
+                }
+            },
             setWeather: function(weatherObj) {
                 // Empty both current temp and daily forecasts
                 $("summary").html("");
