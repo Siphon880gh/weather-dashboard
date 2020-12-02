@@ -35,7 +35,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="search-city" placeholder="City">
                                 <div class="input-group-prepend">
-                                    <button class="input-group-text btn btn-primary" id="search-city-button">
+                                    <button class="input-group-text btn btn-primary" type="submit" id="search-city-button">
                           <span class="oi" data-glyph="magnifying-glass"></span>
                         </button>
                                 </div>
@@ -129,6 +129,11 @@
     <!-- App JS -->
     <script src="assets/js/history.js"></script>
     <script src="assets/js/app.js"></script>
+
+    <!-- Google Places API -->
+    <script src="assets/js/city-autosuggestions.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApUXzz7J8XabeDfZLMCwNBDXHPAjzX6k4&libraries=places&callback=initMap"></script>
+
 </body>
 
 </html>
