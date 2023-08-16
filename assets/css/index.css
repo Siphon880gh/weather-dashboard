@@ -122,18 +122,25 @@ header {
 }
 /* line 85, scss/index.scss */
 .current-temp:empty::before {
-  content: "No weather information searched yet.";
+  content: "Search for your city on the left.";
   height: 30px;
   width: 100%;
 }
 
-/* line 92, scss/index.scss */
+@media screen and (max-width: 768px) {
+  /* line 93, scss/index.scss */
+  .current-temp:empty::before {
+    content: "Search for your city at the top.";
+  }
+}
+/* line 99, scss/index.scss */
 .future-temp {
   -webkit-column-count: 1;
   -moz-column-count: 1;
   column-count: 1;
+  list-style: none;
 }
-/* line 97, scss/index.scss */
+/* line 105, scss/index.scss */
 .future-temp .card {
   width: 200px;
   color: white;
@@ -141,11 +148,11 @@ header {
   flex-wrap: wrap;
   cursor: default;
 }
-/* line 104, scss/index.scss */
+/* line 112, scss/index.scss */
 .future-temp .card:hover {
   background-color: var(--cta-hover);
 }
-/* line 108, scss/index.scss */
+/* line 116, scss/index.scss */
 .future-temp .card .stats p {
   font-weight: 200;
 }

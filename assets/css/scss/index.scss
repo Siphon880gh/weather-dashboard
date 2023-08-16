@@ -83,16 +83,24 @@ header {
     font-size: 1.5rem;
     font-weight: 300;
     &::before {
-        content: "No weather information searched yet.";
+        content: "Search for your city on the left.";
         height: 30px;
         width:100%;
     }
+}
+@media screen AND (max-width:768px) {
+.current-temp:empty {
+    &::before {
+        content: "Search for your city at the top.";
+    }
+}
 }
 
 .future-temp {
     -webkit-column-count:1;
     -moz-column-count:1;
     column-count:1;
+    list-style: none;
 
     .card {
         width: 200px;
